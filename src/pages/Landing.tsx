@@ -107,7 +107,7 @@ export const Landing: React.FC = () => {
                 <div className="landing__hero-image">
                     <div className="landing__hero-graphic">
                         <img
-                            src="/Users/adrianruizvicente/.gemini/antigravity/brain/f1266331-2b33-4074-bbf7-dcee5f4d2bec/lorapadel_hero_2026_1767088784101.png"
+                            src="/hero-2026.png"
                             alt="Lora Pádel Club"
                             className="landing__hero-img"
                         />
