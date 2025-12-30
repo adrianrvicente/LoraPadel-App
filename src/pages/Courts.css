@@ -1,0 +1,488 @@
+.courts {
+    max-width: 1200px;
+}
+
+.courts__header {
+    margin-bottom: var(--spacing-xl);
+}
+
+.courts__title {
+    font-size: var(--font-size-3xl);
+    font-weight: 700;
+    margin-bottom: var(--spacing-xs);
+}
+
+.courts__subtitle {
+    color: var(--text-secondary);
+}
+
+/* Tabs */
+.courts__tabs {
+    display: flex;
+    gap: var(--spacing-xs);
+    background: var(--surface);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xs);
+    margin-bottom: var(--spacing-lg);
+    border: 1px solid var(--border-color);
+    width: fit-content;
+}
+
+.courts__tab {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border: none;
+    background: transparent;
+    border-radius: var(--radius-md);
+    color: var(--text-secondary);
+    font-weight: 500;
+    transition: all var(--transition-fast);
+}
+
+.courts__tab:hover {
+    background: var(--surface-hover);
+    color: var(--text-primary);
+}
+
+.courts__tab--active {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: var(--text-primary);
+}
+
+.courts__tab-badge {
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: var(--radius-full);
+    background: var(--secondary);
+    color: var(--background);
+}
+
+/* Date Navigation */
+.courts__date-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+.courts__nav-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: var(--surface);
+    color: var(--text-secondary);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    transition: all var(--transition-fast);
+}
+
+.courts__nav-btn:hover {
+    background: var(--surface-hover);
+    color: var(--text-primary);
+    border-color: var(--primary);
+}
+
+.courts__current-date {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+/* Legend */
+.courts__legend {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-lg);
+}
+
+.courts__legend-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+}
+
+.courts__legend-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: var(--radius-sm);
+}
+
+.courts__legend-dot--available {
+    background: var(--success);
+}
+
+.courts__legend-dot--open {
+    background: var(--secondary);
+}
+
+.courts__legend-dot--booked {
+    background: var(--text-muted);
+}
+
+/* Calendar Grid */
+.courts__calendar {
+    background: var(--surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+
+.courts__calendar-header {
+    display: grid;
+    grid-template-columns: 80px repeat(4, 1fr);
+    background: var(--surface-elevated);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.courts__time-header,
+.courts__court-header {
+    padding: var(--spacing-md);
+    font-weight: 600;
+    text-align: center;
+}
+
+.courts__court-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    border-left: 1px solid var(--border-color);
+}
+
+.courts__calendar-body {
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.courts__row {
+    display: grid;
+    grid-template-columns: 80px repeat(4, 1fr);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.courts__row:last-child {
+    border-bottom: none;
+}
+
+.courts__time-cell {
+    padding: var(--spacing-md);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--surface-elevated);
+}
+
+.courts__slot {
+    padding: var(--spacing-sm);
+    border-left: 1px solid var(--border-color);
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.courts__slot--available {
+    background: rgba(16, 185, 129, 0.1);
+}
+
+.courts__slot--available:hover {
+    background: rgba(16, 185, 129, 0.2);
+}
+
+.courts__slot--open {
+    background: rgba(212, 165, 116, 0.15);
+}
+
+.courts__slot--open:hover {
+    background: rgba(212, 165, 116, 0.25);
+}
+
+.courts__slot--booked {
+    background: var(--surface-hover);
+    cursor: default;
+}
+
+.courts__slot-text {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    font-size: var(--font-size-sm);
+    color: var(--success);
+    opacity: 0;
+    transition: opacity var(--transition-fast);
+}
+
+.courts__slot--available:hover .courts__slot-text {
+    opacity: 1;
+}
+
+.courts__slot-open {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.courts__slot-players {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    font-size: var(--font-size-sm);
+    color: var(--secondary);
+}
+
+.courts__slot-join {
+    font-size: var(--font-size-xs);
+    color: var(--secondary);
+    font-weight: 600;
+}
+
+.courts__slot-booked {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    font-size: var(--font-size-sm);
+    color: var(--text-muted);
+}
+
+/* Open Matches */
+.courts__open-matches {
+    padding: var(--spacing-lg) 0;
+}
+
+.courts__open-header {
+    margin-bottom: var(--spacing-xl);
+}
+
+.courts__open-header h2 {
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    margin-bottom: var(--spacing-xs);
+}
+
+.courts__open-header p {
+    color: var(--text-secondary);
+}
+
+.courts__open-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.courts__match-card {
+    border-left: 4px solid var(--secondary);
+}
+
+.courts__match-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.courts__match-court {
+    font-weight: 600;
+    color: var(--primary-light);
+}
+
+.courts__match-level {
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-full);
+    background: var(--info-bg);
+    color: var(--info);
+}
+
+.courts__match-datetime {
+    display: flex;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+}
+
+.courts__match-datetime span {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.courts__match-organizer {
+    font-size: var(--font-size-sm);
+    color: var(--text-muted);
+    margin-bottom: var(--spacing-md);
+}
+
+.courts__match-players {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-md);
+}
+
+.courts__match-avatars {
+    display: flex;
+}
+
+.courts__match-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: var(--radius-full);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: -8px;
+    border: 2px solid var(--surface);
+    color: var(--text-primary);
+}
+
+.courts__match-avatar:first-child {
+    margin-left: 0;
+}
+
+.courts__match-avatar--empty {
+    background: var(--surface-hover);
+    color: var(--text-muted);
+    border-style: dashed;
+}
+
+.courts__match-spots {
+    font-size: var(--font-size-sm);
+    color: var(--success);
+    font-weight: 600;
+}
+
+/* Modal */
+.courts__modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: var(--spacing-lg);
+}
+
+.courts__modal {
+    background: var(--surface);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    max-width: 500px;
+    width: 100%;
+    border: 1px solid var(--border-color);
+}
+
+.courts__modal h2 {
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+}
+
+.courts__modal-time {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-xl);
+}
+
+.courts__modal-section {
+    margin-bottom: var(--spacing-lg);
+}
+
+.courts__modal-section label {
+    display: block;
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.courts__upload-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-xl);
+    border: 2px dashed var(--border-color);
+    border-radius: var(--radius-md);
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.courts__upload-area:hover {
+    border-color: var(--primary);
+    background: rgba(42, 123, 123, 0.05);
+}
+
+.courts__upload-hint {
+    font-size: var(--font-size-xs);
+    margin-top: var(--spacing-sm);
+}
+
+.courts__modal-checkbox {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-xl);
+}
+
+.courts__modal-checkbox input {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--primary);
+}
+
+.courts__modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--spacing-md);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    .courts__calendar-header,
+    .courts__row {
+        grid-template-columns: 60px repeat(4, 1fr);
+    }
+
+    .courts__time-cell,
+    .courts__time-header {
+        font-size: var(--font-size-xs);
+        padding: var(--spacing-sm);
+    }
+
+    .courts__court-header {
+        font-size: var(--font-size-xs);
+    }
+
+    .courts__legend {
+        flex-wrap: wrap;
+        gap: var(--spacing-md);
+    }
+}

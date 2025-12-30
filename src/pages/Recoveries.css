@@ -1,0 +1,354 @@
+.recoveries {
+    max-width: 1000px;
+}
+
+.recoveries__header {
+    margin-bottom: var(--spacing-xl);
+}
+
+.recoveries__title {
+    font-size: var(--font-size-3xl);
+    font-weight: 700;
+    margin-bottom: var(--spacing-xs);
+}
+
+.recoveries__subtitle {
+    color: var(--text-secondary);
+}
+
+/* Stats */
+.recoveries__stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-xl);
+}
+
+.recoveries__stat {
+    text-align: center;
+}
+
+.recoveries__stat-icon {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto var(--spacing-sm);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.recoveries__stat-icon--warning {
+    background: var(--warning-bg);
+    color: var(--warning);
+}
+
+.recoveries__stat-icon--success {
+    background: var(--success-bg);
+    color: var(--success);
+}
+
+.recoveries__stat-icon--info {
+    background: var(--info-bg);
+    color: var(--info);
+}
+
+.recoveries__stat-value {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    margin-bottom: var(--spacing-xs);
+}
+
+.recoveries__stat-label {
+    font-size: var(--font-size-sm);
+    color: var(--text-muted);
+}
+
+/* Tabs */
+.recoveries__tabs {
+    display: flex;
+    gap: var(--spacing-xs);
+    background: var(--surface);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xs);
+    margin-bottom: var(--spacing-lg);
+    border: 1px solid var(--border-color);
+}
+
+.recoveries__tab {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md);
+    border: none;
+    background: transparent;
+    border-radius: var(--radius-md);
+    color: var(--text-secondary);
+    font-weight: 500;
+    transition: all var(--transition-fast);
+}
+
+.recoveries__tab:hover {
+    background: var(--surface-hover);
+    color: var(--text-primary);
+}
+
+.recoveries__tab--active {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: var(--text-primary);
+    box-shadow: var(--shadow-glow);
+}
+
+.recoveries__tab-badge {
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: var(--radius-full);
+    background: var(--warning);
+    color: var(--background);
+}
+
+.recoveries__tab-badge--success {
+    background: var(--success);
+}
+
+/* Content */
+.recoveries__content {
+    min-height: 300px;
+}
+
+/* Confirm Cards */
+.recoveries__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.recoveries__confirm-card {
+    border-left: 4px solid var(--warning);
+}
+
+.recoveries__confirm-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--spacing-md);
+}
+
+.recoveries__level-badge {
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-full);
+    display: inline-block;
+    margin-bottom: var(--spacing-sm);
+}
+
+.recoveries__confirm-title {
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    margin-bottom: var(--spacing-xs);
+}
+
+.recoveries__confirm-student {
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+}
+
+.recoveries__deadline {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: var(--surface-hover);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+}
+
+.recoveries__deadline strong {
+    font-size: var(--font-size-lg);
+    color: var(--text-primary);
+}
+
+.recoveries__deadline--urgent {
+    background: var(--error-bg);
+}
+
+.recoveries__deadline--urgent strong {
+    color: var(--error);
+}
+
+.recoveries__confirm-details {
+    display: flex;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+}
+
+.recoveries__confirm-details span {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.recoveries__confirm-actions {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.recoveries__confirm-warning {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: var(--font-size-sm);
+    color: var(--warning);
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: var(--warning-bg);
+    border-radius: var(--radius-md);
+}
+
+/* Slots */
+.recoveries__slots {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.recoveries__slot-card {
+    border-left: 4px solid var(--success);
+}
+
+.recoveries__slot-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-sm);
+}
+
+.recoveries__slot-spots {
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--success);
+}
+
+.recoveries__slot-title {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    margin-bottom: var(--spacing-md);
+}
+
+.recoveries__slot-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+}
+
+.recoveries__slot-details span {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+/* Pending */
+.recoveries__pending {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.recoveries__pending-card {
+    border-left: 4px solid var(--info);
+}
+
+.recoveries__pending-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-sm);
+}
+
+.recoveries__pending-expires {
+    font-size: var(--font-size-sm);
+    color: var(--text-muted);
+}
+
+.recoveries__pending-title {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    margin-bottom: var(--spacing-xs);
+}
+
+.recoveries__pending-missed {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.recoveries__pending-reason {
+    font-size: var(--font-size-sm);
+    color: var(--success);
+    margin-bottom: var(--spacing-md);
+}
+
+/* Empty */
+.recoveries__empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-2xl);
+    text-align: center;
+    color: var(--text-muted);
+    background: var(--surface);
+    border-radius: var(--radius-lg);
+    border: 1px dashed var(--border-color);
+}
+
+.recoveries__empty h3 {
+    margin-top: var(--spacing-md);
+    color: var(--text-secondary);
+}
+
+.recoveries__empty p {
+    margin-top: var(--spacing-xs);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .recoveries__stats {
+        grid-template-columns: 1fr;
+    }
+
+    .recoveries__tabs {
+        flex-direction: column;
+    }
+
+    .recoveries__confirm-header {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+
+    .recoveries__deadline {
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .recoveries__confirm-actions {
+        flex-direction: column;
+    }
+
+    .recoveries__confirm-details {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+}
